@@ -1,20 +1,3 @@
-/*------------------------------------------------------------------
-[Cyan Color Scheme Stylesheet]
-
-Project:    BigStream
-Version:    1.0
-Last change:    Initial RELEASED
-Primary use:    MultiPurpose One Page Template
--------------------------------------------------------------------*/
-
-
-/*------------------------------------------------------------------
-# [Color codes]
-
-# Cyan (active elements, links) #27c5c3
-# */
-
-
 a, a:hover,
 .btn-mod.btn-border-c,
 .btn-icon > span,
@@ -75,4 +58,3 @@ a.blog-item-more:hover,
 .progress-color .progress-bar > span{
     background-color: #ffffff;
 }
-

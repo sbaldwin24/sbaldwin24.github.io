@@ -1,15 +1,5 @@
 @charset "utf-8";
 /*------------------------------------------------------------------
-[Responsive Stylesheet]
-
-Project:    BigStream
-Version:    1.0
-Last change:    Initial RELEASED
-Primary use:    MultiPurpose One Page Template  
--------------------------------------------------------------------*/
-
-
-/*------------------------------------------------------------------
 [Table of contents]
 
 1. Small desktop
@@ -26,16 +16,16 @@ Primary use:    MultiPurpose One Page Template
    ============================== */
 
 @media only screen and (max-width: 1366px) {
-	
-    	
+
+
     .inner-nav ul li {
         margin-left: 25px;
     }
-	
-}  
+
+}
 
 @media only screen and (max-width: 1200px) {
-	
+
     .hs-wrap {
         max-width: 540px;
     }
@@ -49,10 +39,10 @@ Primary use:    MultiPurpose One Page Template
 	.contact-text{
 		padding: 0 30px;
 	}
-    
+
     .alt-service-grid {
         margin-top: -40px;
-    } 
+    }
     .alt-service-item {
         margin-top: 40px;
         padding-left: 48px;
@@ -64,7 +54,7 @@ Primary use:    MultiPurpose One Page Template
     .alt-services-image{
         margin-top: 10px;
     }
-    
+
 }
 
 
@@ -73,7 +63,7 @@ Primary use:    MultiPurpose One Page Template
    ============================== */
 
 @media only screen and (max-width: 1024px) {
-	
+
 	.hs-wrap {
         max-width: 480px;
 		padding-top: 37px;
@@ -82,13 +72,13 @@ Primary use:    MultiPurpose One Page Template
 	.hs-line-2{
 		font-size: 60px;
 	}
-	
+
     .hs-line-8 {
         font-size: 20px;
-    } 
+    }
     .hs-line-9 {
         font-size: 71px;
-    } 
+    }
     .hs-line-10 {
         padding: 10px 14px;
         letter-spacing: 1px;
@@ -104,18 +94,18 @@ Primary use:    MultiPurpose One Page Template
         font-size: 70px;
         letter-spacing: 0.3em;
     }
-    
+
     .benefit-item {
         width: 300px;
         padding: 15px 32px;
     }
     .split-section-headings {
         width: 30%;
-    }	
+    }
     .split-section-content {
         width: 70%;
     }
-    
+
 	.split-section-headings .section-title{
 		font-size: 26px;
 		letter-spacing: 2px;
@@ -123,41 +113,41 @@ Primary use:    MultiPurpose One Page Template
 	.service-descr .service-title {
         margin-bottom: 20px;
     }
-	
+
     .page-section{
         padding: 120px 0;
-        
+
     }
     .page-section, .home-section{
         background-attachment: scroll;
     }
-	
+
     .owl-pagination {
         bottom: 25px;
     }
     .section-bot-image {
         margin: 120px 0 -120px;
     }
-	
+
     #portfolio + .small-section {
         margin-top: -90px;
     }
-    
+
     #news + .small-section {
         margin-top: -120px;
     }
-	
+
     .work-title, .work-descr {
         font-size: 13px;
     }
-    
+
     .lp-item {
         width: 50%;
     }
-    .lp-item:nth-child(4n + 5){ 
-        clear: none; 
+    .lp-item:nth-child(4n + 5){
+        clear: none;
     }
-    .lp-item:nth-child(2n + 3) {        
+    .lp-item:nth-child(2n + 3) {
         clear:left;
     }
     .lp-title, .lp-author{
@@ -165,13 +155,13 @@ Primary use:    MultiPurpose One Page Template
     }
 
 }
-  
+
 @media only screen and (max-width: 992px) {
-    
+
     .hs-line-13 {
         letter-spacing: 0.17em;
     }
-  	
+
 	.split-section-headings,
 	.split-section-headings.left,
 	.split-section-headings.right,
@@ -181,20 +171,20 @@ Primary use:    MultiPurpose One Page Template
 		float: none !important;
 		width: auto;
 	}
-	
+
 	.split-section-headings .section-title{
 		font-size: 35px;
 		letter-spacing: 5px;
 	}
-	
+
     .banner-text {
         text-align: center;
-    } 
+    }
 	.banner-button {
 		margin-top: 40px;
         text-align: center;
     }
-	
+
 	.team-item {
         width: 230px;
     }
@@ -206,10 +196,10 @@ Primary use:    MultiPurpose One Page Template
 	.team-item-name{
 		font-size: 13px;
 	}
-	
+
     .features-icon {
         font-size: 64px;
-    } 
+    }
 	.features-title {
         font-size: 20px;
         font-weight: 700;
@@ -217,7 +207,7 @@ Primary use:    MultiPurpose One Page Template
 	.features-descr{
 		font-size: 14px;
 	}
-	
+
 	.work-item,
 	.work-grid-3 .work-item,
     .container .work-grid-3 .work-item{
@@ -228,11 +218,11 @@ Primary use:    MultiPurpose One Page Template
         margin-top: 40px;
     }
     .form input.newsletter-field::-webkit-input-placeholder{
-        color: #000;        
+        color: #000;
         text-align:center;
      }
-     
-         
+
+
     .contact-item{
 	    text-align: center;
         padding-right: 0 !important;
@@ -247,19 +237,19 @@ Primary use:    MultiPurpose One Page Template
         border-bottom: 1px solid rgba(255,255,255, .1);
         border-left: none;
     }
-    
+
     .blog-item-date {
         border:none;
     }
-	
-	
+
+
 }
-  
-  
+
+
 /* ==============================
    Tablet Portrait
    ============================== */
-  
+
 @media only screen and (max-width: 768px) {
 
 	.hs-wrap {
@@ -268,57 +258,57 @@ Primary use:    MultiPurpose One Page Template
 	.hs-line-2{
 		font-size: 50px;
 	}
-    
+
     .hs-line-7 {
         font-size: 50px;
     }
-	
+
 	.page-section {
         padding: 70px 0;
-    }	
+    }
     .small-section {
         padding: 50px 0;
     }
     .small-title{
         font-size: 18px;
     }
-	
+
 	.owl-pagination {
         bottom: 17px;
     }
 	.item-carousel .owl-pagination {
         bottom: -53px;
     }
-	
+
 	.section-bot-image {
         margin: 70px 0 -70px;
     }
-    
+
     .service-item{
 	    width: 50%;
     }
-    
+
 	#portfolio + .small-section {
         margin-top: -40px;
     }
-    
+
     #news + .small-section {
         margin-top: -70px;
     }
-	
+
     .tpl-minimal-tabs > li {
         padding: 0 5px;
     }
-	
-		
+
+
 	.benefit-item{
 		width: 264px;
 	}
-	
+
 	.count-descr{
 		margin-bottom: 30px;
-	}	
-    
+	}
+
 	.alt-service-grid{
 	margin-top: -30px;
     }
@@ -334,7 +324,7 @@ Primary use:    MultiPurpose One Page Template
 		padding-right: 10px;
 		margin: 4px;
 	}
-	
+
     .blog-item {
         margin-bottom: 50px;
     }
@@ -358,17 +348,17 @@ Primary use:    MultiPurpose One Page Template
 		font-size: 13px;
 	}
 
-    
+
     #map-canvas {
         height: 300px;
     }
-    
-    
+
+
 
 }
 
 @media only screen and (max-width: 767px) {
-	
+
 	.hs-wrap {
         max-width: 320px;
 		padding-top: 27px;
@@ -379,17 +369,17 @@ Primary use:    MultiPurpose One Page Template
     }
 	.hs-line-2{
 		font-size: 36px;
-	}	
+	}
 	.hs-line-3 {
         font-size: 13px;
     }
 	.hs-image{
 		display: none;
 	}
-    
+
     .hs-wrap-1 {
         max-width: 240px;
-    }	
+    }
     .hs-line-5 {
         font-size: 44px;
         letter-spacing: 0.28em;
@@ -400,13 +390,13 @@ Primary use:    MultiPurpose One Page Template
     .hs-line-7 {
         font-size: 32px;
     }
-	
+
     .hs-line-8 {
         font-size: 16px;
-    } 
+    }
     .hs-line-9 {
         font-size: 48px;
-    } 
+    }
     .hs-line-10 {
         padding: 5px 8px;
         font-size: 11px;
@@ -415,12 +405,12 @@ Primary use:    MultiPurpose One Page Template
     .hs-line-10 > span {
         margin: 0;
     }
-    
+
     .hs-line-11 {
         font-size: 18px;
         letter-spacing: 2px;
     }
-    
+
     .hs-line-12 {
         font-size: 44px;
     }
@@ -428,7 +418,7 @@ Primary use:    MultiPurpose One Page Template
         font-size: 60px;
         letter-spacing: 0.1em;
     }
-    
+
     .nbc-logo-wrap{
         min-width: 125px;
     }
@@ -443,29 +433,29 @@ Primary use:    MultiPurpose One Page Template
         width: 100%;
         float: none;
     }
-    
+
 	.benefit-item{
 		width: 230px;
 		padding: 0;
 	}
-	
+
 	.benefit-item:hover:after{
 		display: none;
 	}
-	
+
 	.wide-heading {
         font-size: 32px;
 		letter-spacing: 2px;
     }
-	
+
 	.works-filter a{
 		padding-left: 10px;
 		padding-right: 10px;
 		margin: 4px;
 		width: 46%;
 		font-size: 11px;
-	}	
-	
+	}
+
 	.blog-item-date{
 		width: auto;
 		position: relative;
@@ -480,31 +470,31 @@ Primary use:    MultiPurpose One Page Template
 	}
     .sidebar {
         margin-top: 50px;
-    } 
-    
+    }
+
     blockquote p {
         font-size: 16px;
     }
-    
+
     blockquote footer {
         margin-top: 0;
         font-size: 12px;
-    }   
-	
+    }
+
 }
 
 
 /* ==============================
    Phone
    ============================== */
-  
+
 @media only screen and (max-width: 480px) {
-    
+
     .btn-mod.btn-large {
         padding: 12px 30px 11px;
         font-size: 13px;
     }
-	
+
 	.hs-line-2{
 		font-size: 28px;
 	}
@@ -516,8 +506,8 @@ Primary use:    MultiPurpose One Page Template
     }
     .hs-line-9 {
         font-size: 42px;
-    } 
-    
+    }
+
     .hs-line-12 {
         font-size: 32px;
     }
@@ -525,7 +515,7 @@ Primary use:    MultiPurpose One Page Template
         font-size: 30px;
         letter-spacing: 0.1em;
     }
-   
+
    .scroll-down {
         bottom: 10px;
 		height: 34px;
@@ -534,11 +524,11 @@ Primary use:    MultiPurpose One Page Template
     .scroll-down-icon {
         width: 22px;
         margin-left: -11px;
-    }	
+    }
 	.scroll-down span{
 		display: none;
 	}
-	
+
 	.nav-bar-compact{
 		top: 0;
 		left: 0;
@@ -561,116 +551,116 @@ Primary use:    MultiPurpose One Page Template
 		padding-top: 5px;
 		padding-bottom: 5px;
 	}
-	
+
 	.page-section {
         padding: 50px 0;
     }
     .small-section {
         padding: 30px 0;
     }
-	
+
 	.owl-pagination {
         bottom: 10px;
-    }	
+    }
     .owl-page {
         padding-left: 1px;
 		padding-right: 1px;
-    } 
+    }
 	.owl-page span {
         width: 18px;
     }
-	
+
 	.item-carousel .owl-pagination {
         bottom: -40px;
     }
     .owl-prev, .owl-next {
     	display: none;
     }
-	
+
 	.section-bot-image {
         margin: 50px 0 -50px;
     }
-	
+
 	#portfolio + .small-section {
         margin-top: -20px;
     }
-    
+
     #news + .small-section {
         margin-top: -50px;
     }
-	
+
     .section-title,
 	.split-section-headings .section-title,
 	.wide-heading {
         font-size: 24px;
 		letter-spacing: 2px;
-    }	
+    }
     .section-heading,
 	.sub-heading{
         font-size: 15px;
-    } 
+    }
 	.section-text {
         font-size: 15px;
         line-height: 1.7;
     }
-	
+
 	.tpl-minimal-tabs > li {
         padding: 0;
     }
     .tpl-minimal-tabs > li > a {
         padding: 6px 10px 5px;
     }
-	
+
     .work-container {
         padding: 30px 0;
     }
 	.margin-bot{
         margin-bottom: 30px;
     }
-	
-	.section-text, 
+
+	.section-text,
 	.text{
 		line-height: 1.7;
 	}
-		
+
 	.count-number{
 		font-size: 32px;
 	}
 	.count-title{
 		font-size: 12px;
 	}
-	
+
 	.team-item {
         width: 250px;
     }
-	
+
     .works-filter a{
 		width: 100%;
         margin-left: 0;
         margin-right: 0;
-	}	
-	
+	}
+
 	.work-item,
 	.work-grid-3 .work-item,
     .container .work-grid-3 .work-item {
         width: 100%;
-    }	
+    }
 	.work-title{
 		font-weight: 400;
-	} 
-    
+	}
+
 	.work-full-text{
 		margin-top: 30px;
 	}
 	.work-full-title{
 		font-size: 20px;
 	}
-	
+
 	.blog-container {
         margin-top: 30px;
         margin-bottom: 30px;
     }
-    
+
     .blog-item-title{
         font-size: 16px;
     }
@@ -682,40 +672,40 @@ Primary use:    MultiPurpose One Page Template
 		width: 30px;
 		margin-top: 7px;
 	}
-    
+
     .comment-item{
         font-size: 13px;
     }
-	
+
 	.separ-space{
 		display: block;
 		height: 10px;
 	}
-    
+
     .lp-item {
         width: 100%;
     }
-	
+
 	.form input.newsletter-field{
         font-size: 16px;
         margin-top: 5px;
     }
-    
+
     .cf-left-col,
     .cf-right-col{
         width: auto;
         margin-right: 0;
         float: none;
     }
-    
+
     .bot-menu-item{
         font-size: 16px;
     }
-    
+
     #map-canvas {
         height: 200px;
     }
-    
+
    .fixed-height-small{
         min-height: 300px;
     }
@@ -731,9 +721,9 @@ Primary use:    MultiPurpose One Page Template
 /* ==============================
    Small Phone
    ============================== */
-  
+
 @media only screen and (max-width: 319px) {
-	
+
   	.nav-social-links{
   		display: none;
   	}
@@ -749,10 +739,10 @@ Primary use:    MultiPurpose One Page Template
     .service-descr .service-icon, .service-descr .service-title {
         display: none;
     }
-    
+
     .nbc-menu-links a{
 		padding-top: 5px;
 		padding-bottom: 5px;
 	}
-	
+
 }
