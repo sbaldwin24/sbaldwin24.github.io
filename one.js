@@ -1798,7 +1798,7 @@ function() {
                 r /= 2, s = Math.round(o / r) } else r /= 2, s = Math.round(o / r);
             return h && (s = f, r = o / s), { steps: s, stepValue: r, min: n, max: n + s * r } }, d.template = function(a, b) {
             function c(a, b) {
-                var c = /\W/.test(a) ? new Function("obj", "var p=[],print=function(){p.push.apply(p,arguments);};with(obj){p.push('" + a.replace(/[\r\t\n]/g, " ").split("<%").join("   ").replace(/((^|%>)[^\t]*)'/g, "$1\r").replace(/\t=(.*?)%>/g, "',$1,'").split("   ").join("');").split("%>").join("p.push('").split("\r").join("\\'") + "');}return p.join('');") : d[a] = d[a];
+                var c = /\W/.test(a) ? new Function("obj", "var p=[],print=function(){p.push.apply(p,arguments);};with(obj){p.push('" + a.replace(/[\r\t\n]/g, " ").split("<%").join(" ").replace(/((^|%>)[^\t]*)'/g, "$1\r").replace(/\t=(.*?)%>/g, "',$1,'").split(" ").join("');").split("%>").join("p.push('").split("\r").join("\\'") + "');}return p.join('');") : d[a] = d[a];
                 return b ? c(b) : c }
             if (a instanceof Function) return a(b);
             var d = {};
@@ -3163,7 +3163,7 @@ function() {
         a.prototype.makeRequest = function(a, b) { a.loaderContext != d && (this.loaderContext = a.loaderContext), a.url != d && (this.url = a.url), a.contentType != d && c.ajaxSetup({ contentType: a.contentType, dataType: "html" }), this.errorContext.html("").hide(), this.loaderContext.find(this.loaderSel).show();
             var e = c.ajax({ type: a.method, url: this.url, data: a.data }),
                 f = this;
-            e.done(function(a) { f.loaderContext.find(f.loaderSel).hide(), "application/json" == a.contentType ? a.content || a.error || a.success ? b.handleResponse(a) : f.errorContext.html(f.message).show() : b.handleResponse(a) }) }, window.AjaxHelper = a
+            e.done(function(a) { f.loaderContext.find(f.loaderSel).hide(), "application/json" == a.contentType ? a.content || a.error || a.success ? b.handleResponse(a) : f.errorContext.html(f.message).show() : (b.handleResponse(a), PepUniApp.GlobalSearch.getSessionId(a)) }) }, window.AjaxHelper = a
     }(window, document, jQuery),
     function(a, b, c, d) {
         var e = {};
@@ -3245,7 +3245,7 @@ function() {
                     if (c("html").hasClass("ie8")) Chart.defaults.global.showTooltips = !1, c.each(g, function(a) { g[a] = "\n" + f[a] + "\n" + g[a] });
                     else { c(".learningHours canvas").remove();
                         var h = c("<canvas/>", { id: "myChart" }).height(100);
-                        c(".learningHours").append(h), c("canvas").css("height", "auto !important"), c("canvas").attr("width", c(a).width() / 2.5), c("canvas").css("max-width", c(a).width() / 2.5), Chart.defaults.global.responsive = !1 }
+                        c(".learningHours").append(h), c("#myChart").css("height", "auto !important"), c("#myChart").attr("width", c(a).width() / 2.5), c("#myChart").css("max-width", c(a).width() / 2.5), Chart.defaults.global.responsive = !1 }
                     Chart.defaults.global.animation = !1, Chart.defaults.global.scaleShowLabels = !1, Chart.defaults.global.tooltipTemplate = "<%= value %>"; {
                         var i = { labels: g, datasets: [{ label: "My Second dataset", fillColor: "rgba(151,187,205,0)", strokeColor: "rgba(247,147,32,1) ", pointColor: "rgba(247,147,32,1) ", pointStrokeColor: "#fff", pointHighlightFill: "#fff", pointHighlightStroke: "rgba(151,187,205,1)", data: f }] },
                             j = c("#myChart").get(0).getContext("2d");
@@ -3302,7 +3302,7 @@ function() {
         PepUniApp.GlobalSearch = {
             init: function() {
                 var a = this;
-                this.searchContainer = c("div.global-search"), this.resultList = this.searchContainer.find(".results .tab-section > ul"), this.resultListActive = this.searchContainer.find(".results .tab-section.active > ul"), this.resultListCatalog = this.searchContainer.find(".results .tab-section#pepu_res > ul"), this.resultListBooks = this.searchContainer.find(".results .tab-section#books_res > ul"), this.resultListCollab = this.searchContainer.find(".results .tab-section#collab_res > ul"), this.resultContainer = this.searchContainer.find(".results"), this.errorContext = this.searchContainer.find(".alert.alert-danger"), this.tabs = this.searchContainer.find(".tabs > ul li"), this.tabContent = this.searchContainer.find(".tab-section"), this.tabContentCatalog = this.searchContainer.find(".tab-section#pepu_res"), this.searchInput = this.searchContainer.find('form input[type="text"]'), this.resPerPage = 10, this.paginationCatalog = this.searchContainer.find(".results .tab-section#pepu_res .paginate > ul"), this.paginationBooks = this.searchContainer.find(".results .tab-section#books_res .paginate > ul"), this.paginationCollab = this.searchContainer.find(".results .tab-section#collab_res .paginate > ul"), this.pageLinksSelCatalog = ".global-search .results .tab-section#pepu_res .paginate > ul li a", this.pageLinksSelBooks = ".global-search .results .tab-section#books_res .paginate > ul li a", this.pageLinksSelCollab = ".global-search .results .tab-section#collab_res .paginate > ul li a", this.defaultTab = "catalog", c("#global_search").on("click", function() { PepUniApp.GlobalSearch.toggleSearch(c(this).hasClass("selected") ? !1 : !0) }), c(".global-search .close-search").on("click", function(a) { a.preventDefault(), PepUniApp.GlobalSearch.toggleSearch(!1) }), c(".global-search form a.clear-input").on("click", function(a) { a.preventDefault(), c(this).parents("form").find('input[type="text"]').val("").focus() }), c(".global-search form").on("submit", function(b) { b.preventDefault();
+                this.searchContainer = c("div.global-search"), this.resultList = this.searchContainer.find(".results .tab-section > ul"), this.resultListActive = this.searchContainer.find(".results .tab-section.active > ul"), this.resultListCatalog = this.searchContainer.find(".results .tab-section#pepu_res > ul"), this.resultListBooks = this.searchContainer.find(".results .tab-section#books_res > ul"), this.resultListCollab = this.searchContainer.find(".results .tab-section#collab_res > ul"), this.resultContainer = this.searchContainer.find(".results"), this.errorContext = this.searchContainer.find(".alert.alert-danger"), this.tabs = this.searchContainer.find(".tabs > ul li"), this.tabContent = this.searchContainer.find(".tab-section"), this.tabContentCatalog = this.searchContainer.find(".tab-section#pepu_res"), this.searchInput = this.searchContainer.find('form input[type="text"]'), this.resPerPage = 10, this.paginationCatalog = this.searchContainer.find(".results .tab-section#pepu_res .paginate > ul"), this.paginationBooks = this.searchContainer.find(".results .tab-section#books_res .paginate > ul"), this.paginationCollab = this.searchContainer.find(".results .tab-section#collab_res .paginate > ul"), this.pageLinksSelCatalog = ".global-search .results .tab-section#pepu_res .paginate > ul li a", this.pageLinksSelBooks = ".global-search .results .tab-section#books_res .paginate > ul li a", this.pageLinksSelCollab = ".global-search .results .tab-section#collab_res .paginate > ul li a", this.defaultTab = "catalog", c("#global_search").on("click", function() { PepUniApp.GlobalSearch.toggleSearch(c(this).hasClass("selected") ? !1 : !0) }), c(".global-search .close-search").on("click", function(a) { a.preventDefault(), PepUniApp.GlobalSearch.toggleSearch(!1) }), c(".global-search form a.clear-input").on("click", function(a) { a.preventDefault(), c(this).parents("form").find('input[type="text"]').val("").focus() }), c(".global-search form").on("submit", function(b) { c("#books_res header .col-md-2.col-sm-2.col-xs-10").find("a").removeClass("cstmbold"), c("#books_res header .col-md-2.col-sm-2.col-xs-10 span.reset").css("display", "none"), c("#books_res .related-search").show(), b.preventDefault();
                     var e = c.trim(c(this).find('input[type="text"]').val());
                     a.keyword = e, "" !== a.keyword && a.keyword !== d ? a.validate(a.keyword) ? (a.resetTabs(), PepUniApp.GlobalSearch.perfromSearch(a.keyword, 1)) : alert("Following Special characters are not allowed in search: \", ', \\, }, {, [,] ,<, >. Please try your search again without these characters.") : alert("Please type a keyword to search.") }), this.initTabs(), this.handlePagination(), this.handlePaginationNew() },
             resetTabs: function() {
@@ -3310,9 +3310,7 @@ function() {
                 a.tabs.removeClass("active").eq(0).addClass("active"), a.tabContent.removeClass("active"), a.tabContentCatalog.addClass("active"), a.tabs.find("a").removeClass("resultPresent") },
             initTabs: function() {
                 var a = this;
-                this.tabs.on("click", function(b) { b.preventDefault(), a.tabs.removeClass("active"), a.tabContent.removeClass("active"), c(this).addClass("active");
-                    var d = c(this).find("a").data("section");
-                    c("#" + d).toggleClass("active"), "collab_res" == d ? c(this).find("a").hasClass("resultPresent") || (c(this).find("a").addClass("resultPresent"), PepUniApp.GlobalSearch.perfromSearch(a.keyword, "collaborationSearch", "collaboration")) : "books_res" == d && (c(this).find("a").hasClass("resultPresent") || (c(this).find("a").addClass("resultPresent"), PepUniApp.GlobalSearch.perfromSearch(a.keyword, 0, "GSA"))) }) },
+                this.tabs.on("click", function(b) { b.preventDefault(), a.tabs.removeClass("active"), a.tabContent.removeClass("active"), c(this).addClass("active"), tabName = c(this).find("a").data("section"), c("#" + tabName).toggleClass("active"), "collab_res" == tabName ? c(this).find("a").hasClass("resultPresent") || (c(this).find("a").addClass("resultPresent"), PepUniApp.GlobalSearch.perfromSearch(a.keyword, "collaborationSearch", "collaboration")) : "books_res" == tabName && (c(this).find("a").hasClass("resultPresent") || (c(this).find("a").addClass("resultPresent"), PepUniApp.GlobalSearch.perfromSearch(a.keyword, 0, "GSA"))) }) },
             setUrl: function(a) { this.url = a },
             toggleSearch: function(a) { a ? (c(".expand-header.selected").length && (PepUniApp.PrimaryNav.slideHeader(), c(".expand-header").removeClass("selected")), c(".global-search").slideDown(), c("#global_search").addClass("selected"), this.searchInput.focus()) : (this.resultList.html(""), this.errorContext.html("").hide(), this.resultContainer.hide(), this.searchInput.val(""), this.searchContainer.css("height", ""), c(".global-search").slideUp(), c("#global_search").removeClass("selected")) },
             perfromSearch: function(a, e, f) { this.errorContext.html("").hide(), this.resultContainer.hide(), this.searchContainer.css("height", "100%");
@@ -3345,20 +3343,20 @@ function() {
                         var d = a.paginationCatalog.find("li a:not(.step)").filter(".disabled").text();
                         a.perfromSearch(a.keyword, parseInt(d) - 1) } else if (c(this).hasClass("step next")) {
                         var d = a.paginationCatalog.find("li a:not(.step)").filter(".disabled").text();
-                        a.perfromSearch(a.keyword, parseInt(d) + 1)
-                    } else {
+                        a.perfromSearch(a.keyword, parseInt(d) + 1) } else {
                         var e = parseInt(c(this).text());
                         a.perfromSearch(a.keyword, e) }
                     b.preventDefault()
                 }), c(b).on("click", this.pageLinksSelBooks, function(b) {
+                    var d = c("#searchForm input").val();
                     if (c(this).hasClass("disabled")) return !1;
                     if (c(this).hasClass("step prev")) {
-                        var d = a.paginationBooks.find("li a:not(.step)").filter(".disabled").text();
-                        d = parseInt(d) - 1, d = 10 * (d - 1), a.perfromSearch(a.keyword, parseInt(d), "GSA") } else if (c(this).hasClass("step next")) {
-                        var d = a.paginationBooks.find("li a:not(.step)").filter(".disabled").text();
-                        d = parseInt(d) + 1, d = 10 * (d - 1), a.perfromSearch(a.keyword, parseInt(d), "GSA") } else {
-                        var e = parseInt(c(this).text());
-                        e = 10 * (e - 1), a.perfromSearch(a.keyword, e, "GSA") }
+                        var e = a.paginationBooks.find("li a:not(.step)").filter(".disabled").text();
+                        e = parseInt(e) - 1, e = 10 * (e - 1), a.perfromSearch(d, parseInt(e), "GSA") } else if (c(this).hasClass("step next")) {
+                        var e = a.paginationBooks.find("li a:not(.step)").filter(".disabled").text();
+                        e = parseInt(e) + 1, e = 10 * (e - 1), a.perfromSearch(d, parseInt(e), "GSA") } else {
+                        var f = parseInt(c(this).text());
+                        f = 10 * (f - 1), a.perfromSearch(d, f, "GSA") }
                     b.preventDefault() })
             },
             paginateNew: function(a, b) {
@@ -3381,14 +3379,97 @@ function() {
                     f = c(".results ul li.active a").data("section");
                 if ("pepu_res" == f) a.content.results !== d && "catalogSearch" == a.content.searchType && (b = a.content.results, b.length > 0 ? (c.each(b, function(a) { result = b[a], result.desc == d && (result.desc = ""), e += "<li>", e += '<a href="' + result.url + '">' + result.title + "</a>", e += "<p>" + result.desc + "</p>", e += "</li>" }), this.resultContainer.show(), this.paginationCatalog.html(""), a.content.totalCount !== d && a.content.totalCount > this.resPerPage ? (this.resPerPage = 10, this.paginate(a.content.totalCount, a.content.activePage)) : a.content.totalCount !== d && a.content.totalCount <= this.resPerPage && (this.resPerPage = a.content.totalCount, this.paginate(a.content.totalCount, a.content.activePage)), this.resultListCatalog.html(e)) : (this.resultContainer.show(), e += "" == a.content.error ? "<p>No results found for this keyword.</p>" : "<p>" + a.content.error + "</p>", this.paginationCatalog.html(""), this.resultListCatalog.html(e)));
                 else if ("books_res" == f)
-                    if (a.GSP.RES !== d)
-                        if (b = a.GSP.RES.R, b != d && b.length > 0) { c.each(b, function(a) { result = b[a], result.S == d && (result.S = ""), e += "<li>", e += '<div class="searchBox">', e += "8" == result.MT.mp_type ? '<div class="iconbox srcVideotmp"></div>' : '<div class="iconbox srcBooktmp"></div>', e += '<div class="contentBox">', ("" == result.MT.mp_title || result.MT.mp_title == d) && (result.MT.mp_title = "No Title"), e += "" == result.MT.mp_url || result.MT.mp_url == d ? '<a href="#">' + result.MT.mp_title + "</a>" : '<a href="' + result.MT.mp_url + '" target="_blank">' + result.MT.mp_title + "</a>", e += "<p>" + result.S + "</p>", e += "</div></div>", e += "</li>" }), this.resultContainer.show(), this.paginationBooks.html("");
-                            var g = Math.ceil(a.GSP.RES.SN / 10);
-                            a.GSP.RES.M !== d && a.GSP.RES.M > this.resPerPage ? (this.resPerPage = 10, this.paginate(a.GSP.RES.M, g)) : a.GSP.RES.M !== d && a.GSP.RES.M <= this.resPerPage && (this.resPerPage = a.GSP.RES.M, this.paginate(a.GSP.RES.M, g)), this.resultListBooks.html(e) } else this.resultContainer.show(), e += a.GSP.error === d ? "<p>No results found for this keyword.</p>" : "<p>" + a.GSP.error + "</p>", this.paginationBooks.html(""), this.resultListBooks.html(e);
-                else this.resultContainer.show(), e += a.GSP.error === d ? "<p>No results found for this keyword.</p>" : "<p>" + a.GSP.error + "</p>", this.paginationBooks.html(""), this.resultListBooks.html(e);
-                else a.content.results !== d && "collaboration" == a.content.searchType && (b = a.content.results, e = "", b.length > 0 ? (c.each(b, function(a) { result = b[a], result.title !== d && (result.desc == d && (result.desc = ""), e += "<li>", e += '<a href="' + result.url + '" target="_blank">' + result.title + "</a>", e += "<p>" + result.desc + "</p>", e += "</li>") }), this.resultListCollab.html(e), this.paginationCollab.html(""), this.paginateNew(a.content.previous, a.content.next), this.resultContainer.show()) : (e = "", this.paginateNew(a.content.previous, a.content.next), c(".results").show(), e += "" == a.content.error ? "<p>No results found for this keyword.</p>" : "<p>" + a.content.error + "</p>", this.resultListCollab.html(e), this.paginationCollab.html(""), this.resultContainer.show())) }
+                    if (a.GSP.RES !== d) { b = a.GSP.RES.R;
+                        var g = a.GSP.RES;
+                        if (b != d && b.length > 0) { c(".results-found h6").find("span").html(g.SN + " - " + g.EN + " of " + g.M), c.each(b, function(a) { result = b[a], result.S == d && (result.S = ""), e += "<li>", e += '<div class="searchBox">', e += '<div class="contentBox">', ("" == result.MT.mp_title || result.MT.mp_title == d) && (result.MT.mp_title = "No Title"), e += "" == result.MT.mp_url || result.MT.mp_url == d ? '<a href="#">' + result.MT.mp_title + "</a>" : '<a href="' + result.MT.mp_url + '" target="_blank">' + result.MT.mp_title + "</a>", e += "VIDEO" == result.MT.mp_type ? '<div class="iconbox srcVideotmp"></div>' : "BOOK" == result.MT.mp_type ? '<div class="iconbox srcBooktmp"></div>' : "", e += "<p>" + result.S + "</p>", e += "</div></div>", e += "</li>" }), this.resultContainer.show(), this.paginationBooks.html("");
+                            var h = Math.ceil(a.GSP.RES.SN / 10);
+                            a.GSP.RES.M !== d && a.GSP.RES.M > this.resPerPage ? (this.resPerPage = 10, this.paginate(a.GSP.RES.M, h)) : a.GSP.RES.M !== d && a.GSP.RES.M <= this.resPerPage && (this.resPerPage = a.GSP.RES.M, this.paginate(a.GSP.RES.M, h)), this.resultListBooks.html(e) } else this.resultContainer.show(), a.GSP.error === d ? c(".results-found h6").find("span").text("0") : e += "<p>" + a.GSP.error + "</p>", this.paginationBooks.html(""), this.resultListBooks.html(e) } else this.resultContainer.show(), e += a.GSP.error === d ? "<p>No results found for this keyword.</p>" : "<p>" + a.GSP.error + "</p>", this.paginationBooks.html(""), this.resultListBooks.html(e);
+                else a.content.results !== d && "collaboration" == a.content.searchType && (b = a.content.results, e = "", b.length > 0 ? (c.each(b, function(a) { result = b[a], result.title !== d && (result.desc == d && (result.desc = ""), e += "<li>", e += '<a href="' + result.url + '" target="_blank">' + result.title + "</a>", e += "<p>" + result.desc + "</p>", e += "</li>") }), this.resultListCollab.html(e), this.paginationCollab.html(""), this.paginateNew(a.content.previous, a.content.next), this.resultContainer.show()) : (e = "", this.paginateNew(a.content.previous, a.content.next), c(".results").show(), e += "" == a.content.error ? "<p>No results found for this keyword.</p>" : "<p>" + a.content.error + "</p>", this.resultListCollab.html(e), this.paginationCollab.html(""), this.resultContainer.show())) },
+            getSessionId: function() {
+                var a = c(".results ul li.active a").data("section");
+                if ("books_res" == a) {
+                    var b = c.trim(c(".global-search form").find('input[type="text"]').val()),
+                        d = "/gsasearch/cluster?coutput=json&btnG=Google+Search&access=a&sort=date:D:L:d1&client=pu_frontend&lr=&oe=UTF-8&ie=UTF-8&num=10&wc=200&wc_mc=1&ud=1&exclude_apps=1&site=mp_pepu&entqr=3&entqrm=0";
+                    if (b.match(/inmeta:mp_type=BOOK/g) || b.match(/inmeta:mp_type=VIDEO/g) || b.match(/inmeta:ds_type=books247/g) || b.match(/inmeta:ds_type=getabstract/g)) return !0;
+                    c.ajax({ url: d + "&q=" + b, type: "post", dataType: "json", contentType: "application/json; charset=utf-8", success: function(a) { c(".related-search").find(".block").remove(), c(".related-search").find(".related-search-list").remove();
+                            var b = a.clusters.length;
+                            if (0 == b) c(".related-search").append("<p class='related-search-list'>This search query does not have related search terms.</p>");
+                            else {
+                                var d = a.clusters[0].clusters,
+                                    e = d.length,
+                                    f = Math.ceil(e / 2);
+                                if (e > 0) {
+                                    for (i = 0; f > i; i++) c(".related-search").append('<div class="block pull-left col-md-3"></div>');
+                                    var g = c(".related-search").find(".block");
+                                    c.each(d, function(a, b) {
+                                        var c, d = b.label;
+                                        c = g.eq(e > 2 ? e / 2 > a ? 0 : 1 : 0), c.append('<p class="related-search-list">\n            <a href="javascript:void(0);">' + d + "</a></p>") }), c(".related-search .block .related-search-list a").click(function() { c("#books_res header .col-md-2.col-sm-2.col-xs-10").find("a").removeClass("cstmbold"), c("#books_res header .col-md-2.col-sm-2.col-xs-10 span.reset").css("display", "none");
+                                        var a = c(this).text();
+                                        c.trim(c(".global-search form").find('input[type="text"]').val(a)), PepUniApp.GlobalSearch.perfromSearch(a, 0, "GSA") }) } } } }) } },
+            performAppending: function(a, b, c, d, e, f) {
+                var g = "";
+                if ("" != b && "undefined" != b && (g += b), "" != d && "undefined" != d) {
+                    var h = d.replace(/ /g, " OR ");
+                    g += h }
+                if ("" != c && "undefined" != c && (g = g + '"' + c + '"'), "" != e && "undefined" != e) {
+                    var i = e.replace(/ /g, " -");
+                    g += i }
+                if ("" != f && "undefined" != f) {
+                    var j = " inmeta:author~" + f;
+                    g += j }
+                return "" != a && "undefined" != a && "BOOKS" == a ? g += " inmeta:mp_type=BOOK" : "" != a && "undefined" != a && "VIDEO" == a && (g += " inmeta:mp_type=VIDEO"), g }
         }
-    }(window, document, jQuery),
+    }(window, document, jQuery), $(document).ready(function() { $("#books_res header a.books24by7").click(function() { $("#books_res header .col-md-2.col-sm-2.col-xs-10 span.all").removeClass("cstmbold");
+            var a = $("#searchForm input").val(),
+                b = /inmeta:ds_type=getabstract/gi;
+            (a.match(/inmeta:ds_type=books247/g) || a.match(/inmeta:ds_type=getabstract/g)) && (a = a.replace(b, "")), $(this).addClass("cstmbold"), $("#books_res header a.getAbstract").removeClass("cstmbold"), $("#books_res header .col-md-2.col-sm-2.col-xs-10 span.reset").css("display", "inline-block");
+            var c = a + " inmeta:ds_type=books247";
+            PepUniApp.GlobalSearch.perfromSearch(c, 0, "GSA"), $("#searchForm input[type=text]").val(c) }), $("#books_res header .col-md-2.col-sm-2.col-xs-10 span.reset").click(function() {
+            var a = $("#searchForm input").val(),
+                b = /inmeta:ds_type=getabstract/gi,
+                c = /inmeta:ds_type=books247/gi;
+            (a.match(/inmeta:ds_type=books247/g) || a.match(/inmeta:ds_type=getabstract/g)) && (a = a.replace(b, ""), a = a.replace(c, "")), $(this).css("display", "none"), $("#books_res header .col-md-2.col-sm-2.col-xs-10").find("a").removeClass("cstmbold"), PepUniApp.GlobalSearch.perfromSearch(a, 0, "GSA"), $("#searchForm input[type=text]").val(a) }), $("#books_res header .col-md-2.col-sm-2.col-xs-10 span.all").click(function() {
+            var a = $("#searchForm input").val(),
+                b = /inmeta:ds_type=getabstract/gi,
+                c = /inmeta:ds_type=books247/gi;
+            (a.match(/inmeta:ds_type=books247/g) || a.match(/inmeta:ds_type=getabstract/g)) && (a = a.replace(b, ""), a = a.replace(c, "")), $(this).addClass("cstmbold"), $("#books_res header .col-md-2.col-sm-2.col-xs-10").find("a").removeClass("cstmbold"), PepUniApp.GlobalSearch.perfromSearch(a, 0, "GSA"), $("#searchForm input[type=text]").val(a) }), $("#books_res header a.getAbstract").click(function() { $("#books_res header .col-md-2.col-sm-2.col-xs-10 span.all").removeClass("cstmbold");
+            var a = $("#searchForm input").val(),
+                b = /inmeta:ds_type=books247/gi;
+            (a.match(/inmeta:ds_type=books247/g) || a.match(/inmeta:ds_type=getabstract/g)) && (a = a.replace(b, "")), $(this).addClass("cstmbold"), $("#books_res header a.books24by7").removeClass("cstmbold"), $("#books_res header .col-md-2.col-sm-2.col-xs-10 span.reset").css("display", "inline-block");
+            var c = a + " inmeta:ds_type=getabstract";
+            PepUniApp.GlobalSearch.perfromSearch(c, 0, "GSA"), $("#searchForm input[type=text]").val(c) }), $("#advancesearchform .searchinfo").click(function(a) { a.preventDefault(), $("#books_res header a").removeClass("cstmbold"), $("#books_res header .col-md-2.col-sm-2.col-xs-10 span.reset").css("display", "none");
+            var b = "/gsasearch/cluster?coutput=json&btnG=Google+Search&access=a&sort=date:D:L:d1&client=pu_frontend&lr=&oe=UTF-8&ie=UTF-8&num=10&wc=200&wc_mc=1&ud=1&exclude_apps=1&site=mp_pepu&entqr=3&entqrm=0",
+                c = $("select[name='selectedKeyword']").val(),
+                d = $("input[name=all]").val(),
+                e = $("input[name=phrase]").val(),
+                f = $("input[name=any]").val(),
+                g = $("input[name=none]").val(),
+                h = $("input[name=author]").val(),
+                j = PepUniApp.GlobalSearch.performAppending(c, d, e, f, g, h),
+                k = [];
+            k.push(c);
+            var l = null,
+                m = $(".rightsidefields");
+            m.each(function() {
+                var a = $(this).val(),
+                    b = a.replace(/,/g, "");
+                k.push(b), l = k.join() });
+            var n = 0;
+            return m.each(function() { "" != $(this).val() && n++ }), n > 0 ? ($("#books_res header:eq(0)").show(), $("#books_res .result-links").show(), $("#books_res .paginate").show(), $("#books_res .related-search").show(), $("#advance-search").css("display", "none"), PepUniApp.GlobalSearch.perfromSearch(j, 0, "GSA"), $.trim($(".global-search form").find('input[type="text"]').val("")), $("#searchForm input[type=text]").val(j), "" != (d || e || f || g) ? $.ajax({ url: b + "&as_q=" + d + "&as_epq=" + e + "&as_oq=" + f + "&as_eq=" + g, type: "post", dataType: "json", contentType: "application/json; charset=utf-8", success: function(a) { $(".related-search").find(".block").remove(), $(".related-search").find(".related-search-list").remove();
+                    var b = a.clusters.length;
+                    if (0 == b) $(".related-search").append("<p class='related-search-list'>This search query does not have related search terms.</p>");
+                    else {
+                        var c = a.clusters[0].clusters,
+                            d = c.length,
+                            e = Math.ceil(d / 2);
+                        if (d > 0) {
+                            for (i = 0; e > i; i++) $(".related-search").append('<div class="block pull-left col-md-3"></div>');
+                            var f = $(".related-search").find(".block");
+                            $.each(c, function(a, b) {
+                                var c, e = b.label;
+                                c = f.eq(d > 2 ? d / 2 > a ? 0 : 1 : 0), c.append('<p class="related-search-list"><a href="javascript:void(0);">' + e + "</a></p>") }), $(".related-search .block .related-search-list a").click(function() {
+                                var a = $(this).text();
+                                $.trim($(".global-search form").find('input[type="text"]').val(a)), PepUniApp.GlobalSearch.perfromSearch(a, 0, "GSA") }) } } } }) : $(".related-search").find(".block").remove(), void 0) : !0 }) }),
     function(a, b, c) { PepUniApp.Comments = { init: function() { PepUniApp.Comments.fetchComments(), c("#post").on("click", function() {
                     if ("" != c("#textData").val()) PepUniApp.Comments.postComment();
                     else {
